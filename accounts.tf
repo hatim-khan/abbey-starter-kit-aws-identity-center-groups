@@ -8,11 +8,6 @@ import {
   id = "239750427433"
 }
 
-# import "aws_organizations_account" "staging" {
-#   name = "Staging"
-#   email = "staging-hatim@abbey.io"
-# }
-
 resource "aws_organizations_account" "production" {
   name = "Production"
   email = "production-hat@abbey.io"
