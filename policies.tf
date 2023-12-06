@@ -7,7 +7,7 @@ resource "aws_ssoadmin_managed_policy_attachment" "read_only_access" {
 
 resource "aws_ssoadmin_permission_set" "read_only" {
   instance_arn = tolist(data.aws_ssoadmin_instances.main.arns)[0]
-  name         = "ReadOnlyAccess"
+  name         = "ReadOnlyAccess_Hat"
 }
 
 
@@ -26,5 +26,5 @@ resource "aws_ssoadmin_managed_policy_attachment" "s3_full_access" {
 
 resource "aws_ssoadmin_permission_set" "compute_full_access" {
   instance_arn = tolist(data.aws_ssoadmin_instances.main.arns)[0]
-  name         = "ComputeFullAccess"
+  name         = "ComputeFullAccess_Hat"
 }
