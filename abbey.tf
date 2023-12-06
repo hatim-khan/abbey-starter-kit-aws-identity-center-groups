@@ -20,9 +20,9 @@ resource "abbey_grant_kit" "group_membership_grant" {
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
     location = "github://hatim-khan/abbey-starter-kit-aws-identity-center-groups/access.tf" #CHANGEME
     append = <<-EOT
-      resource "aws_identitystore_group_membership" "user_{{ .data.system.abbey.identities.aws_member.id }}_group_${aws_identitystore_group.prod_access.group_id}" {
+      resource "aws_identitystore_group_membership" "user_{{ .data.system.abbey.identities.aws_member.id }}_group_${aws_identitystore_group.prod_access_hat.group_id}" {
         member_id = "{{ .data.system.abbey.identities.aws_member.id }}"
-        group_id = "${aws_identitystore_group.prod_access.group_id}"
+        group_id = "${aws_identitystore_group.prod_access_hat.group_id}"
         identity_store_id = "${data.aws_ssoadmin_instances.main.identity_store_ids[0]}"
       }
     EOT
