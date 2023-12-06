@@ -10,7 +10,7 @@ resource "abbey_grant_kit" "group_membership_grant" {
   workflow = {
     steps = [ {
       reviewers = {
-        one_of = ["alice@example.com"] #CHANGEME
+        one_of = ["hat@abbey.io"] #CHANGEME
       }
     } ]
   }
@@ -18,7 +18,7 @@ resource "abbey_grant_kit" "group_membership_grant" {
   output = {
     # Replace with your own path pointing to where you want your access changes to manifest.
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
-    location = "github://replace-me-with-organization/replace-me-with-repo/access.tf" #CHANGEME
+    location = "github://hatim-khan/abbey-starter-kit-aws-identity-center-groups/access.tf" #CHANGEME
     append = <<-EOT
       resource "aws_identitystore_group_membership" "user_{{ .data.system.abbey.identities.aws_member.id }}_group_${aws_identitystore_group.prod_access.group_id}" {
         member_id = "{{ .data.system.abbey.identities.aws_member.id }}"
@@ -30,11 +30,11 @@ resource "abbey_grant_kit" "group_membership_grant" {
 }
 
 resource "abbey_identity" "user_1" {
-  abbey_account = "replace-me@example.com" #CHANGEME
+  abbey_account = "hat@abbey.io" #CHANGEME
   source = "aws_member"
   metadata = jsonencode(
     {
-      id = "ReplaceWithAWSIdentityCenterUserId" #CHANGEME
+      id = "14d894f8-6031-705f-904b-9aeb4a46404e" #CHANGEME
     }
   )
 }

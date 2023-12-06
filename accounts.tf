@@ -1,6 +1,6 @@
 resource "aws_organizations_account" "staging" {
   name = "Staging"
-  email = "koushik+aws@abbey.io"
+  email = "staging-hat@abbey.io"
 }
 
 resource "aws_organizations_account" "production" {
