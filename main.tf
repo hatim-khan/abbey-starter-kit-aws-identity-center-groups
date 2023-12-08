@@ -13,7 +13,7 @@ terraform {
 }
  
 provider "aws" {
- region = "ei-west-2"
+ region = "us-east-1"
 }
 
 provider "abbey" {
